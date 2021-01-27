@@ -1,0 +1,291 @@
+:root {
+    --color-primary: #4B6CC1;
+    --color-secondary: #EEFBFB;
+    --color-accent: #203647;
+    --color-primary-soft: #C1DBE3;
+    
+/*    --color-headings: #1b0760;
+    --color-body: #918ca4;
+    --color-body-darker: #5c5577;
+    --color-border: #ccc;
+    --border-radius: 30px;
+    --padding-vertical: 6rem;*/
+}
+*, *::after, *::before {
+    /*with this property width and height will be applied to the border and padding*/
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    
+    /*color: var(--color-secondary);*/ /*Deactivate after bulding components, can't see shit.*/
+    font-family: 'Roboto Slab',Arial, Helvetica, sans-serif;
+    font-size: 2.4rem;
+    line-height: 1.5; /*Space between lines, 1.5 times the font size*/
+}
+
+/* Typography */
+h1 {
+    /*1 times font size of the html element*/
+    /*This equals to 70px*/
+    font-size: 7rem;
+}
+h2 {
+    font-size: 4rem;
+}
+h3 {
+    font-size: 3rem;
+}
+@media screen and (min-width: 1024px){
+    body {
+        font-size: 1.8rem;
+    }
+    h1 {
+        font-size: 8rem;
+    }
+    h2{
+        font-size: 4rem;
+    }
+    h3 {
+        font-size: 2.4rem;
+    }
+}
+
+/*Links*/
+a {
+    text-decoration: none;
+}
+a .btn .icon {
+    padding-bottom: 4px;
+}
+@media screen and (min-width: 1024px) {
+    .link-arrow {
+      font-size: 1.5rem;
+    }
+}
+/* Badges */
+.badge {
+    border-radius: 20px;
+    padding: 0.5rem 2rem; /*Change this if needed*/
+    font-weight: 500;
+    white-space: nowrap; /*Prevent content from going into multiple lines.*/
+}
+.badge--primary {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* Lists */
+.list {
+    color: var(--color-headings);
+    list-style: none;
+    padding-left: 0;
+}
+.list--inline .list__item{
+    display: inline-block;
+    margin-right: 2rem;
+}
+/* Icons */
+.icon {
+    width: 40px;
+    height: 40px;
+}
+.icon--primary {
+    fill: var(--color-primary);
+}
+.icon--white {
+    fill: #FFFFFF;
+}
+.icon--small {
+    width: 30px;
+    height: 30px;
+}
+.icon-container {
+    background: #f3f9fa;
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+.icon-container--accent {
+    background: var(--color-primary);
+}
+/* Buttons */
+.btn {
+    border: 0;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 1rem 0;
+    padding: 1rem;
+    outline: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+.btn .icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    vertical-align: middle;
+  }
+.btn--primary {
+    background: var(--color-primary);
+    color: white;
+}
+.btn--primary:hover {
+    background: #6C82BC;
+}
+@media screen and (min-width: 1024px) {
+    .btn {
+        font-size: 1.5rem;
+    }
+}
+/* Collapsibles */
+.collapsible__header {
+    display: flex;
+    justify-content: space-between; /*To have two inline items, one at the start and one at the end of the line*/
+}
+.collapsible__heading{
+    margin-top: 0;
+    font-size: 3rem;
+}
+.collapsible__chevron {
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+}
+.collapsible__content {
+    /*Hack for the animation*/
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.collapsible--expanded .collapsible__chevron{
+    transform: rotate(0);
+}
+.collapsible--expanded .collapsible__content{
+    /*Hack for the animation*/
+    max-height: 100vh;
+    opacity:1;
+}
+
+/* Navigation Bar */
+.nav {
+    background: var(--color-primary);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+}
+.nav__list {
+    width: 100%;
+    margin: 0;
+}
+.nav__item {
+    border-bottom: 1px solid var(--color-secondary);
+    padding: 0.5rem 2rem;
+}
+.nav__item > a {
+    color: var(--color-secondary);
+    transition: color 0.3s;
+}
+.nav__item > a:hover {
+    color: var(--color-accent);
+}
+.nav__toggler {
+    opacity: 0.5;
+    transition: box-shadow 0.15s;
+    cursor: pointer;
+}
+.nav.collapsible--expanded .nav__toggler {
+    opacity: 1;
+    box-shadow: 0 0 0 3px #666;
+    border-radius: 5px;
+}
+.nav__brand { /*Here we ignore OOCSS because this only applies in the header*/
+    font-family: 'Libre Baskerville','Times New Roman', Times, serif;
+    color: var(--color-secondary);
+}
+@media screen and (min-width: 768px) {
+    .nav__toggler {
+        display: none;
+    }
+    .nav__list {
+        width: auto;
+        display: flex;
+        font-size: 1.6rem;
+        max-height: 100%;
+        opacity: 1;
+    }
+    .nav__item {
+        border: 0;
+    }
+}
+/* Grids */
+.grid {
+    display: grid;
+}
+@media screen and (min-width: 768px) {
+    .grid--1x2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid--1x3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid--1x4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .grid--3x1 {
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+/* Blocks */
+.block {
+    --padding-vertical: 6rem; /*Local variable available only here and its children*/
+    padding: var(--padding-vertical) 2rem;
+    /*border: 2px solid red; For troubleshooting*/
+    text-align: center;
+}
+.block__heading {
+    margin-top: 0;
+}
+.block--primary {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+}
+.block--end-arrow {
+    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 76%, 50% 100%, 0 74%, 0 0);
+    clip-path: polygon(50% 0%, 100% 0, 100% 76%, 50% 100%, 0 74%, 0 0);
+    padding-bottom: calc(var(--padding-vertical) + 15rem); /*More padding if needed*/
+}
+.block--bordered {
+    margin-inline: 5rem;
+    border-radius: 2.5%;
+}
+/* Containers */
+/*We can use it anywhere*/
+.container {
+    max-width: 1140px; /*So that our content doesn't stretch, even in really wide screens*/
+    margin: 0 auto; /*So that the content is always centered in our containers*/
+}
+/* Cards */
+.card {
+    border-radius: 50px;
+    box-shadow: 0 0 20px 10px #f3f3f3;
+    overflow: hidden;
+}
+.card__header, .card__body {
+    padding: 2rem 3rem; /*So the content is centered*/
+}
+/*.card__body{
+    border-top: 1px solid var(--color-accent);
+} If line needed*/
+.card--primary-soft {
+    background: var(--color-primary-soft);
+}
