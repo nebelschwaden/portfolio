@@ -19,7 +19,7 @@ html {
     font-size: 62.5%;
 }
 body {
-    
+    background: var(--color-secondary);
     /*color: var(--color-secondary);*/ /*Deactivate after bulding components, can't see shit.*/
     font-family: 'Roboto Slab',Arial, Helvetica, sans-serif;
     font-size: 2.4rem;
@@ -56,6 +56,7 @@ h3 {
 /*Links*/
 a {
     text-decoration: none;
+    color: #FFFFFF;
 }
 a .btn .icon {
     padding-bottom: 4px;
@@ -101,6 +102,14 @@ a .btn .icon {
 .icon--small {
     width: 30px;
     height: 30px;
+}
+.icon--medium {
+    width: 60px;
+    height: 60px;
+}
+.icon--big {
+    width: 90px;
+    height: 90px;
 }
 .icon-container {
     background: #f3f9fa;
@@ -231,6 +240,12 @@ a .btn .icon {
 .grid {
     display: grid;
 }
+.grid__spread-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
 @media screen and (min-width: 768px) {
     .grid--1x2 {
         grid-template-columns: repeat(2, 1fr);
@@ -243,6 +258,9 @@ a .btn .icon {
     }
     .grid--3x1 {
         grid-template-rows: repeat(3, 1fr);
+    }
+    .grid__spread-items{ 
+        margin-inline: 6rem;
     }
 }
 /* Blocks */
@@ -288,4 +306,39 @@ a .btn .icon {
 } If line needed*/
 .card--primary-soft {
     background: var(--color-primary-soft);
+}
+/*Languages*/
+.languages {
+    color:var(--color-secondary);
+    font-size: 2.5rem;
+}
+/*Labels*/
+
+.label-es {
+    margin-right: 20px;
+}
+.label-en {
+    margin-left: 20px;
+}
+/*Images*/
+.img--medium {
+    width: 100%;
+    max-width: 300px; 
+    object-fit: cover;
+}
+.img--round {
+    clip-path: circle(50% at 50% 50%);
+}
+/* Hero */
+.hero__content {
+    line-height: 5;
+}
+.hero__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0;
+}
+.hero__footer h2,h3 {
+    font-weight: 400;
 }
