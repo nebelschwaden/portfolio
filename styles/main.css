@@ -69,13 +69,14 @@ a .btn .icon {
 /* Badges */
 .badge {
     border-radius: 20px;
-    padding: 0.5rem 2rem; /*Change this if needed*/
+    padding: 0.5rem 1.5rem; /*Change this if needed*/
     font-weight: 500;
     white-space: nowrap; /*Prevent content from going into multiple lines.*/
 }
 .badge--primary {
     background: var(--color-primary);
     color: white;
+    
 }
 
 /* Lists */
@@ -335,14 +336,87 @@ a .btn .icon {
     box-shadow: 0 0 20px 10px #f3f3f3;
     overflow: hidden;
 }
-.card__header, .card__body {
-    padding: 2rem 3rem; /*So the content is centered*/
+ .card__body {
+    margin-top: 0;
+    padding-top: 0;
+    padding: 1rem 3rem; /*So the content is centered*/
+}
+.card img {
+    
+    width: 100%;
+}
+.card__img {    
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card__btn{
+    position: absolute;
+    /*display: none;*/
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s linear;
+    
+}
+.card__button-left {
+    position: absolute;
+    /*transform: translate(-50%,-50%);
+    margin-right: -50%;
+    top: 50%;
+    left: 30%;*/
+    margin-right: 15rem;
+}
+.card__button-right {
+    position: absolute;
+    /*transform: translate(-50%,-50%);
+    margin-right: -50%;
+    top: 50%;
+    right: 50%;*/
+    margin-left: 15rem;
+    
+}
+.card__badges{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+.card__badges .badge {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+@media screen and (min-width:768 px){
+    .card__button-left {
+        bottom: 80px; 
+        left: 100px; 
+    }
+    .card__button-right {
+        bottom: 80px;
+        right: 100px;
+    }
+}
+.card__img:hover img {
+    filter: blur(1.7px);
+    transition: filter 0.5s;
+}
+.card__img:hover .card__btn {
+    /*display: table-cell;*/
+    visibility: visible;
+    opacity: 1;
 }
 /*.card__body{
     border-top: 1px solid var(--color-accent);
 } If line needed*/
 .card--primary-soft {
     background: var(--color-primary-soft);
+}
+.card__body {
+    color:var(--color-accent);
+    text-align: center;
 }
 /*Languages*/
 .languages {
