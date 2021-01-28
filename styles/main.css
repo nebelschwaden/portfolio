@@ -115,6 +115,9 @@ a .btn .icon {
 .icon--giant {
     width: 140px;
     height: 140px;
+}.icon--max {
+    width: 300px;
+    height: 200px;
 }
 .icon-container {
     background: #f3f9fa;
@@ -470,4 +473,20 @@ a .btn .icon {
     .skills--item h4, h5{
         font-size: 1.5rem;
     }
+}
+/* Profiles */
+.profiles {
+    display: grid;
+}
+
+/* Footer */
+.footer {
+    background: #C1DBE3;
+    color: var(--color-accent);
+}
+.footer .icon {
+    position:absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
