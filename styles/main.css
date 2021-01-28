@@ -111,6 +111,10 @@ a .btn .icon {
     width: 90px;
     height: 90px;
 }
+.icon--giant {
+    width: 140px;
+    height: 140px;
+}
 .icon-container {
     background: #f3f9fa;
     width: 64px;
@@ -246,6 +250,9 @@ a .btn .icon {
     align-items: center;
     
 }
+.skills .grid {
+    grid-template-columns: repeat(3, 1fr);
+}
 @media screen and (min-width: 768px) {
     .grid--1x2 {
         grid-template-columns: repeat(2, 1fr);
@@ -256,11 +263,18 @@ a .btn .icon {
     .grid--1x4 {
         grid-template-columns: repeat(4, 1fr);
     }
+    .grid--2x3 {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
     .grid--3x1 {
         grid-template-rows: repeat(3, 1fr);
     }
     .grid__spread-items{ 
         margin-inline: 6rem;
+    }
+    .skills .grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 /* Blocks */
@@ -269,9 +283,11 @@ a .btn .icon {
     padding: var(--padding-vertical) 2rem;
     /*border: 2px solid red; For troubleshooting*/
     text-align: center;
+   
 }
 .block__heading {
     margin-top: 0;
+    font-weight: 500;
 }
 .block--primary {
     background: var(--color-primary);
@@ -286,11 +302,32 @@ a .btn .icon {
     margin-inline: 5rem;
     border-radius: 2.5%;
 }
+.block__content {
+    color: var(--color-accent);
+    font-size: 2.2rem;
+    padding-inline: 1rem;
+}
+.block__content h2 {
+    font-weight: 500; 
+}
+@media screen and (min-width: 768px ){
+    .block__content {
+        color: var(--color-accent);
+        font-size: 3rem;
+        padding-inline: 10rem;
+    }
+    .block__content h2 {
+        font-weight: 500; 
+    }
+}
 /* Containers */
 /*We can use it anywhere*/
 .container {
     max-width: 1140px; /*So that our content doesn't stretch, even in really wide screens*/
     margin: 0 auto; /*So that the content is always centered in our containers*/
+}
+.container h4 {
+    color: var(--color-accent);
 }
 /* Cards */
 .card {
@@ -333,12 +370,30 @@ a .btn .icon {
 .hero__content {
     line-height: 5;
 }
-.hero__footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    line-height: 0;
-}
 .hero__footer h2,h3 {
     font-weight: 400;
+}
+@media screen and (min-width:768px) {
+    .hero__footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 0;
+    }
+}
+/* Skills */
+.skills--item h4,h5{
+    color: var(--color-secondary);
+}
+.skills--item h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.skills--item h5 {
+    font-weight: 400;
+}
+@media screen and (max-width:425px){
+    .skills--item h4, h5{
+        font-size: 1.5rem;
+    }
 }
