@@ -12,18 +12,222 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <footer class="block footer" >
-        <div class="container">
-            <svg class="icon icon--primary icon--big">
-                <use xlink:href="images/sprite-icons.svg#up-arrow-icon"></use>
+    <!--Nav bar-->
+    <header>
+        <nav class="nav collapsible">
+            <a class="nav__brand" href="/">RJ</a>
+            <svg class="icon icon--white nav__toggler">
+                <use xlink:href="images/sprite-icons.svg#menu-hamburguer-icon"></use>
+            </svg>
+            <ul class="list nav__list collapsible__content">
+                <li class="nav__item"><a href="#aboutme">Acerca de mi</a></li>
+                <li class="nav__item"><a href="#skillset">Habilidades</a></li>
+                <li class="nav__item"><a href="#projects">Proyectos</a></li>
+                <li class="nav__item"><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+   <!-- Hero-->
+   <section class="block block--primary block--end-arrow">
+    <div class="container grid grid--1x2">
+       <div class="hero__content ">
+           <div class="languages"><a class="label-es"href="#es">ES</a>|<a class="label-en"href="#en">EN</a></div>
+           <img class="img--medium img--round" src="images/jpg/profile.jpg" alt="">
+           <div class="grid__spread-items">
+               <a href="https://www.linkedin.com/in/ronny-jaramillo-5192581b9/" target="_blank" >
+               <svg class="icon icon--white icon--big"><use xlink:href="images/sprite-icons.svg#linked-in-icon"></use></svg>
+               </a>
+               <a href="mailto:ronny.jaramillo935@gmail.com" >
+                   <svg class="icon icon--white icon--big"><use xlink:href="images/sprite-icons.svg#email-icon"></use></svg>
+               </a>
+               <a href="https://github.com/nebelschwaden" target="_blank">
+                   <svg class="icon icon--white icon--big"><use xlink:href="images/sprite-icons.svg#github-icon"></use></svg>
+               </a>
+           </div>
+       </div>
+       <div class="hero__footer">
+           <h2>Ronny Jaramillo</h2>
+           <h3>Software Developer</h3>
+       </div>  
+    </div>
+</section>
+<!--About me-->
+<section class="block" id="aboutme">
+    <div class="container block__content">
+         <h2>Acerca de mi</h2>
+         <p>Hola!<br>
+             Me llamo Ronny y soy un desarrollador de software. <br>Soy una persona con una pasión por el desarrollo móvil y web, una gran motivación por el aprendizaje de nuevas tecnologías y  con facilidad de adaptación dentro de cualquier entorno de trabajo.
+         </p>
+         <p>Me fascina todo lo referente a las tecnologías de la información, sin embargo, me he enfocado en:</p>
+     </div>
+     <div class="container grid grid--1x3">
+         <div class="container">
+             <svg class="icon icon--giant">
+                 <use xlink:href="images/sprite-icons.svg#web-icon-2"></use>
+               </svg>
+               <h4>Desarrollo Web</h4>
+         </div>
+         
+         <div class="container">
+             <svg class="icon icon--giant">
+                 <use xlink:href="images/sprite-icons.svg#mobile-icon-2"></use>
+               </svg>
+               <h4>Desarrollo Móvil</h4>
+         </div>
+         
+         <div class="container">
+             <svg class="icon icon--giant">
+                 <use xlink:href="images/sprite-icons.svg#cyber-attack-icon"></use>
+               </svg>
+               <h4>Seguridad Informática</h4>
+         </div>   
+     </div>
+</section>
+<!--Skillset-->
+<section class="skills container block block--primary block--bordered" id="skillset">
+    <h2 class="block__heading">Habilidades</h2>
+    <div class="container grid grid--1x4">
+        <div class="skills--item">
+            <svg class="icon icon--big">
+                <use xlink:href="images/sprite-icons.svg#html-icon"></use>
               </svg>
-            Creado y diseñado con HTML5, CSS3, JS y &lt;3 por Jaramillo Ronny. &copy; 2021
+              <h4>HTML</h4>
+              <h5>HTML5</h5>
         </div>
-    </footer>
-   
-   
-    
-    
+        <div class="skills--item">
+            <svg class="icon icon--big">
+                <use xlink:href="images/sprite-icons.svg#css-icon"></use>
+              </svg>
+              <h4>CSS</h4>
+              <h5>CSS3</h5>
+        </div>
+        <div class="skills--item">
+            <svg class="icon icon--big">
+                <use xlink:href="images/sprite-icons.svg#js-icon"></use>
+              </svg>
+              <h4>JavaScript</h4>
+              <h5>ES6 - EJS</h5>
+        </div>
+        <div class="skills--item">
+            <svg class="icon icon--big">
+                <use xlink:href="images/sprite-icons.svg#bootstrap-icon-svg"></use>
+              </svg>
+              <h4>Boostrap</h4>
+              <h5>v4</h5>
+        </div>
+        <div class="skills--item">
+            <svg class="icon icon--big">
+                <use xlink:href="images/sprite-icons.svg#python-icon"></use>
+              </svg>
+              <h4>Python</h4>
+              <h5>Flask - Jinja - Pandas - Numpy</h5>
+        </div>
+        <div class="skills--item">
+            <svg class="icon icon--big">
+                <use xlink:href="images/sprite-icons.svg#java-icon"></use>
+              </svg>
+              <h4>Java</h4>
+              <h5>Android - Desktop</h5>
+        </div>
+        <div class="skills--item">
+            <svg class="icon icon--big">
+                <use xlink:href="images/sprite-icons.svg#cs-icon"></use>
+              </svg>
+              <h4>C#</h4>
+              <h5>Desktop</h5>
+        </div>
+        <div class="skills--item">
+            <svg class="icon icon--big">
+                <use xlink:href="images/sprite-icons.svg#sql-icon"></use>
+              </svg>
+              <h4>SQL</h4>
+              <h5>MySQL - SQL Server - Oracle</h5>
+        </div>
+        <div class="skills--item">
+            <svg class="icon icon--big">
+                <use xlink:href="images/sprite-icons.svg#nest-icon-svg"></use>
+              </svg>
+              <h4>NestJS</h4>
+        </div>
+        <div class="skills--item">
+            <svg class="icon icon--big">
+                <use xlink:href="images/sprite-icons.svg#nodejs-icon"></use>
+              </svg>
+              <h4>NodeJS</h4>
+
+        </div>
+        <div class="skills--item">
+            <svg class="icon icon--big">
+                <use xlink:href="images/sprite-icons.svg#git-icon-svg"></use>
+              </svg>
+              <h4>Git</h4>
+        </div>
+        <div class="skills--item">
+            <svg class="icon icon--big">
+                <use xlink:href="images/sprite-icons.svg#docker-icon"></use>
+              </svg>
+              <h4>Docker</h4>
+        </div>
+            <div class="skills--item">
+                <svg class="icon icon--big">
+                    <use xlink:href="images/sprite-icons.svg#kotlin-icon-svg"></use>
+                  </svg>
+                  <h4>Kotlin</h4>
+            </div>
+            <div class="skills--item">
+                <svg class="icon icon--big">
+                    <use xlink:href="images/sprite-icons.svg#linux-icon"></use>
+                  </svg>
+                  <h4>Linux</h4>
+            </div>
+            <div class="skills--item">
+                <svg class="icon icon--big">
+                    <use xlink:href="images/sprite-icons.svg#burp-icon-svg"></use>
+                  </svg>
+                  <h4>Burp Suite</h4>
+            </div>
+            <div class="skills--item">
+                <svg class="icon icon--big">
+                    <use xlink:href="images/sprite-icons.svg#web-security-icon"></use>
+                  </svg>
+                  <h4>Web App Pentesting</h4>
+            </div>
+    </div>
+</section>
+<!--Projects-->
+<!--Profiles-->
+<section class="profiles">
+    <div class="container grid">
+        <a href="https://tryhackme.com/p/nebelschwaden" target="_blank"><img src="images/png/nebelschwaden-thmbadge.png" alt="TryHackMe Profile"></a>
+    <a href="https://pentesterlab.com/profile/c2cca3a1b7af49c0a937fcc9eb" target="_blank"><svg class="icon--max"><use xlink:href="images/sprite-icons.svg#pentesterlab-icon-svg"></use></svg></a>
+    </div>
+</section>
+<!--Contact-->
+<section class="contact block" id="contact">
+    <div class="container block__content">
+        <h2>Contacto</h2>
+        <div class="grid__spread-items">
+            <a href="https://www.linkedin.com/in/ronny-jaramillo-5192581b9/" target="_blank" >
+            <svg class="icon icon--primary icon--big"><use xlink:href="images/sprite-icons.svg#linked-in-icon"></use></svg>
+            </a>
+            <a href="mailto:ronny.jaramillo935@gmail.com" >
+                <svg class="icon icon--primary icon--big"><use xlink:href="images/sprite-icons.svg#email-icon"></use></svg>
+            </a>
+            <a href="https://github.com/nebelschwaden" target="_blank">
+                <svg class="icon icon--primary icon--big"><use xlink:href="images/sprite-icons.svg#github-icon"></use></svg>
+            </a>
+        </div>
+    </div>
+</section>
+<!--Footer-->
+<svg class="icon icon--primary icon--big">
+    <use xlink:href="images/sprite-icons.svg#up-arrow-icon"></use>
+  </svg>
+<footer class="block">
+    <div class="container footer">
+        Creado y diseñado con HTML5, CSS3, JS y &lt;3 por Jaramillo Ronny <br> &copy; RJ 2021
+    </div>
+</footer>
+    <script src="js/main.js"></script>
 </body>
 </html>

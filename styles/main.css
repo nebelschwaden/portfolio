@@ -96,9 +96,20 @@ a .btn .icon {
 }
 .icon--primary {
     fill: var(--color-primary);
+    transition: fill 0.3s;
+}
+.icon--primary:hover {
+    fill: var(--color-primary-soft);
+    transition: fill 0.3s;
 }
 .icon--white {
     fill: #FFFFFF;
+    transition: fill 0.3s;
+}
+.icon--white:hover {
+    fill: var(--color-accent);
+    
+    transition: fill 0.3s;
 }
 .icon--small {
     width: 30px;
@@ -199,14 +210,21 @@ a .btn .icon {
     align-items: center;
     flex-wrap: wrap;
     padding: 0 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
 }
+
 .nav__list {
     width: 100%;
     margin: 0;
+    
 }
 .nav__item {
     border-bottom: 1px solid var(--color-secondary);
     padding: 0.5rem 2rem;
+    font-size: 2rem;
 }
 .nav__item > a {
     color: var(--color-secondary);
@@ -227,6 +245,8 @@ a .btn .icon {
 }
 .nav__brand { /*Here we ignore OOCSS because this only applies in the header*/
     font-family: 'Libre Baskerville','Times New Roman', Times, serif;
+    font-size: 5rem;
+    padding-left: 2rem;
     color: var(--color-secondary);
 }
 @media screen and (min-width: 768px) {
@@ -427,7 +447,10 @@ a .btn .icon {
     font-size: 2.5rem;
 }
 /*Labels*/
-
+.label-es:hover, .label-en:hover {
+    color: var(--color-accent);
+    transition: color 0.3s;
+}
 .label-es {
     margin-right: 20px;
 }
@@ -477,16 +500,19 @@ a .btn .icon {
 /* Profiles */
 .profiles {
     display: grid;
+    margin-top: 4rem;
 }
 
 /* Footer */
 .footer {
     background: #C1DBE3;
     color: var(--color-accent);
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }
 .footer .icon {
     position:absolute;
-    top: 8%;
-    left: 50%;
-    transform: translate(-50%, 0);
+    margin:-25px 0 0 -25px;
+    
 }
