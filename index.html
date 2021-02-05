@@ -4,14 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ronny Jaramillo</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="libraries/aos/aos.css">
 </head>
 <body>
+    <!--Modals-->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+          </div>
+          <div class="modal-body">
+            <video controls autoplay loop src="" class="modal__video">Tu explorador web no soporta videos.</video>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+    </div>
     <!--Nav bar-->
     <header>
         <nav class="nav collapsible">
@@ -30,7 +49,7 @@
    <!-- Hero-->
    <section class="block block--primary block--end-arrow">
     <div class="container grid grid--1x2">
-       <div class="hero__content ">
+       <div class="hero__content" data-aos="fade-right" data-aos-duration="1500">
            <div class="languages"><a class="label-es"href="#es">ES</a>|<a class="label-en"href="#en">EN</a></div>
            <img class="img--medium img--round" src="images/jpg/profile.jpg" alt="">
            <div class="grid__spread-items">
@@ -45,36 +64,28 @@
                </a>
            </div>
        </div>
-       <div class="hero__footer">
+       <div class="hero__footer" data-aos="fade-left" data-aos-duration="1500">
            <h2>Ronny Jaramillo</h2>
-           <h3>Software Developer</h3>
+           <h3>Desarrollador de Software</h3>
        </div>  
     </div>
 </section>
 <!--About me-->
 <section class="block" id="aboutme">
-    <div class="container block__content">
+    <div class="container block__content" data-aos="fade-up" data-aos-duration="1500">
          <h2>Acerca de mi</h2>
          <p>Hola!<br>
-             Me llamo Ronny y soy un desarrollador de software. <br>Soy una persona con una pasión por el desarrollo móvil y web, una gran motivación por el aprendizaje de nuevas tecnologías y  con facilidad de adaptación dentro de cualquier entorno de trabajo.
+             Me llamo Ronny y soy desarrollador de software.<br>Soy una persona con una gran pasión por el desarrollo de software, una gran motivación por el aprendizaje de nuevas tecnologías y  con facilidad de adaptación dentro de cualquier entorno de trabajo.
          </p>
          <p>Me fascina todo lo referente a las tecnologías de la información, sin embargo, me he enfocado en:</p>
      </div>
-     <div class="container grid grid--1x3">
+     <div class="container grid grid--1x2" data-aos="zoom-in" data-aos-duration="1500">
          <div class="container">
              <svg class="icon icon--giant">
                  <use xlink:href="images/sprite-icons.svg#web-icon-2"></use>
                </svg>
-               <h4>Desarrollo Web</h4>
+               <h4>Desarrollo de Software</h4>
          </div>
-         
-         <div class="container">
-             <svg class="icon icon--giant">
-                 <use xlink:href="images/sprite-icons.svg#mobile-icon-2"></use>
-               </svg>
-               <h4>Desarrollo Móvil</h4>
-         </div>
-         
          <div class="container">
              <svg class="icon icon--giant">
                  <use xlink:href="images/sprite-icons.svg#cyber-attack-icon"></use>
@@ -84,7 +95,7 @@
      </div>
 </section>
 <!--Skillset-->
-<section class="skills container block block--primary block--bordered" id="skillset">
+<section class="skills container block block--primary block--bordered" id="skillset" data-aos="zoom-in" data-aos-duration="2000">
     <h2 class="block__heading">Habilidades</h2>
     <div class="container grid grid--1x4">
         <div class="skills--item">
@@ -106,7 +117,7 @@
                 <use xlink:href="images/sprite-icons.svg#js-icon"></use>
               </svg>
               <h4>JavaScript</h4>
-              <h5>ES6 - EJS</h5>
+              <h5>ES9 - EJS</h5>
         </div>
         <div class="skills--item">
             <svg class="icon icon--big">
@@ -195,15 +206,184 @@
     </div>
 </section>
 <!--Projects-->
+<section class="projects block" id="projects">
+    <h2 class="block__heading">Proyectos</h2> 
+    <div class="container grid grid--1x3">
+        <div class="project" data-aos="fade-right" data-aos-duration="2000">
+            <div class="card card--primary-soft">
+                <header class="card__header">
+                    <div class="card__img">
+                        <img  src="images/jpg/invoice-system-1.png" alt="">
+                        <a href="https://github.com/magodyfistery/python-project-2020A-Recommendation" class="btn btn--primary card__btn card__button-left" target="_blank">
+                            <svg class="icon icon--white"><use xlink:href="images/sprite-icons.svg#github-icon"></use></svg>Código
+                        </a>
+                        <button class="btn btn--primary card__btn card__button-right video__btn" id="eshop"><svg class="icon icon--white">
+                            <use xlink:href="images/sprite-icons.svg#video-icon"></use>
+                          </svg>Video</button>
+                    </div>
+                    <div class="card__body">
+                        <h4>E-SHOP CON SISTEMAS DE RECOMENDACIÓN</h4>
+                        <p>Una tienda en línea enfocada a productos de tecnología. Esta se halla integrada con sistemas de recomendación basados en collaborative filtering y sistemas de recomendación para grupos. </p>
+                        <div class="card__badges">
+                            <span class="badge badge--primary">
+                                Python
+                            </span>
+                            <span class="badge badge--primary">
+                                Flask
+                            </span>
+                            <span class="badge badge--primary">
+                                MySQL
+                            </span>
+                            <span class="badge badge--primary">
+                                Jinja2
+                            </span>
+                            <span class="badge badge--primary">
+                                Bootstrap
+                            </span>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+        <div class="project" data-aos="fade-up" data-aos-duration="2000">
+            <div class="card card--primary-soft">
+                <header class="card__header">
+                    <div class="card__img">
+                        <img  src="images/jpg/invoice-system-1.png" alt="">
+                        <a href="https://github.com/nebelschwaden/JavaInvoiceSystem" class="btn btn--primary card__btn card__button-left" target="_blank">
+                            <svg class="icon icon--white"><use xlink:href="images/sprite-icons.svg#github-icon"></use></svg>Código
+                        </a>
+                        <button class="btn btn--primary card__btn card__button-right video__btn" id="java"><svg class="icon icon--white">
+                            <use xlink:href="images/sprite-icons.svg#video-icon"></use>
+                          </svg>Video</button>
+                    </div>
+                    <div class="card__body">
+                        <h4>SISTEMA DE FACTURACIÓN PARA BOLETERÍAS</h4>
+                        <p>Esta aplicación de escritorio desarrollada completamente en Java y basada en un patrón Modelo-Vista-Controlador (MVC) permite gestionar la venta de boletos para los eventos deportivos.</p>
+                        <div class="card__badges">
+                            <span class="badge badge--primary">
+                                Java
+                            </span>
+                            <span class="badge badge--primary">
+                                MySQL
+                            </span>
+                            <span class="badge badge--primary">
+                                JasperReports
+                            </span>
+                            <span class="badge badge--primary">
+                                jCalendar
+                            </span>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+        <div class="project" data-aos="fade-left" data-aos-duration="2000">
+            <div class="card card--primary-soft">
+                <header class="card__header">
+                    <div class="card__img">
+                        <img  src="images/jpg/invoice-system-1.png" alt="">
+                        <a href="https://github.com/andresPantoja99/MUSEUM-Web" class="btn btn--primary card__btn card__button-left" target="_blank">
+                            <svg class="icon icon--white"><use xlink:href="images/sprite-icons.svg#github-icon"></use></svg>Código
+                        </a>
+                        <button class="btn btn--primary card__btn card__button-right video__btn" id="museum"><svg class="icon icon--white">
+                            <use xlink:href="images/sprite-icons.svg#video-icon"></use>
+                        </svg>Video</button>
+                    </div>
+                    <div class="card__body">
+                        <h4>APLICACIÓN WEB PARA LA GESTIÓN DE MUSEOS</h4>
+                        <p>Esta aplicación web se trata de un sistema para la gestión de un useo. Con aplicacioń esta se puede manejar la venta de entradas para los distintos tipos de eventos que se lleven a cabo dentro del museo.</p>
+                        <div class="card__badges">
+                            <span class="badge badge--primary">
+                                NestJS
+                            </span>
+                            <span class="badge badge--primary">
+                                EJS
+                            </span>
+                            <span class="badge badge--primary">
+                                MySQL
+                            </span>
+                            <span class="badge badge--primary">
+                                Bootstrap
+                            </span>
+                            <span class="badge badge--primary">
+                                TypeORM
+                            </span>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+        <div class="container project__spread" >
+           <div class="project" data-aos="fade-up" data-aos-duration="2000">
+            <div class="card card--primary-soft">
+                <header class="card__header">
+                    <div class="card__img">
+                        <img  src="images/jpg/invoice-system-1.png" alt="">
+                        <a href="https://github.com/nebelschwaden/fuckoo" class="btn btn--primary card__btn" target="_blank">
+                            <svg class="icon icon--white"><use xlink:href="images/sprite-icons.svg#github-icon"></use></svg>Código
+                        </a>
+                    </div>
+                    <div class="card__body">
+                        <h4>FUCKOO</h4>
+                        <p>Una herramienta para el procesamiento y filtrado de datos de archivos generados con Cuckoo Sandbox, herramienta empleada para el análisis de malware. Fuckoo permite generar datasets a partir de los resultados entregados por Cuckoo para su uso con machine learning.</p>
+                        <div class="card__badges">
+                            <span class="badge badge--primary">
+                                Python
+                            </span>
+                            <span class="badge badge--primary">
+                                Pandas
+                            </span>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+            <div class="project" data-aos="fade-up" data-aos-duration="2000">
+                <div class="card card--primary-soft">
+                    <header class="card__header">
+                        <div class="card__img">
+                            <img  src="images/jpg/invoice-system-1.png" alt=""> 
+                            <!--AGREGAR LINK DEL PORTAFOLIO-->
+                            <a href="#" class="btn btn--primary card__btn" target="_blank">
+                                <svg class="icon icon--white"><use xlink:href="images/sprite-icons.svg#github-icon"></use></svg>Código
+                            </a>
+                        </div>
+                        <div class="card__body">
+                            <h4>PORTFOLIO</h4>
+                            <p>Este portafolio está completamente hecho con HTML5, CSS3 y JavaScript. No Bootstrap, no React, no Miligram, no Tailwind. La única librería empleada es una librería de JavaScript, AOS.</p>
+                            <div class="card__badges">
+                                <span class="badge badge--primary">
+                                    HTML5
+                                </span>
+                                <span class="badge badge--primary">
+                                    CSS3
+                                </span>
+                                <span class="badge badge--primary">
+                                    JavaScript
+                                </span>
+                                <span class="badge badge--primary">
+                                    AOS
+                                </span>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</section>
 <!--Profiles-->
-<section class="profiles">
+<section class="profiles" data-aos="flip-up" data-aos-duration="2500">
     <div class="container grid">
         <a href="https://tryhackme.com/p/nebelschwaden" target="_blank"><img src="images/png/nebelschwaden-thmbadge.png" alt="TryHackMe Profile"></a>
     <a href="https://pentesterlab.com/profile/c2cca3a1b7af49c0a937fcc9eb" target="_blank"><svg class="icon--max"><use xlink:href="images/sprite-icons.svg#pentesterlab-icon-svg"></use></svg></a>
     </div>
 </section>
 <!--Contact-->
-<section class="contact block" id="contact">
+<section class="contact block" id="contact" data-aos="zoom-in" data-aos-duration="2000">
     <div class="container block__content">
         <h2>Contacto</h2>
         <div class="grid__spread-items">
@@ -220,14 +400,21 @@
     </div>
 </section>
 <!--Footer-->
-<svg class="icon icon--primary icon--big">
-    <use xlink:href="images/sprite-icons.svg#up-arrow-icon"></use>
-  </svg>
-<footer class="block">
-    <div class="container footer">
-        Creado y diseñado con HTML5, CSS3, JS y &lt;3 por Jaramillo Ronny <br> &copy; RJ 2021
+<footer class="block footer">
+    <a href="#">
+        <svg class="icon icon--primary icon--medium">
+            <use xlink:href="images/sprite-icons.svg#up-arrow-icon"></use>
+          </svg>
+        </a>
+    <div class="container">
+        Creado y diseñado con HTML5, CSS3, JS y &hearts; por Jaramillo Ronny &copy; RJ 2021
     </div>
 </footer>
     <script src="js/main.js"></script>
+    <script src="libraries/aos/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </body>
+
 </html>

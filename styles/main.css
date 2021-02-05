@@ -3,13 +3,6 @@
     --color-secondary: #EEFBFB;
     --color-accent: #203647;
     --color-primary-soft: #C1DBE3;
-    
-/*    --color-headings: #1b0760;
-    --color-body: #918ca4;
-    --color-body-darker: #5c5577;
-    --color-border: #ccc;
-    --border-radius: 30px;
-    --padding-vertical: 6rem;*/
 }
 *, *::after, *::before {
     /*with this property width and height will be applied to the border and padding*/
@@ -17,15 +10,16 @@
 }
 html {
     font-size: 62.5%;
+    overflow-x: hidden;
 }
 body {
     background: var(--color-secondary);
-    /*color: var(--color-secondary);*/ /*Deactivate after bulding components, can't see shit.*/
     font-family: 'Roboto Slab',Arial, Helvetica, sans-serif;
     font-size: 2.4rem;
     line-height: 1.5; /*Space between lines, 1.5 times the font size*/
+    -webkit-text-size-adjust: none;
+    overflow-x: hidden;
 }
-
 /* Typography */
 h1 {
     /*1 times font size of the html element*/
@@ -52,7 +46,6 @@ h3 {
         font-size: 2.4rem;
     }
 }
-
 /*Links*/
 a {
     text-decoration: none;
@@ -78,7 +71,6 @@ a .btn .icon {
     color: white;
     
 }
-
 /* Lists */
 .list {
     color: var(--color-headings);
@@ -182,10 +174,6 @@ a .btn .icon {
     margin-top: 0;
     font-size: 3rem;
 }
-.collapsible__chevron {
-    transform: rotate(-90deg);
-    transition: transform 0.3s;
-}
 .collapsible__content {
     /*Hack for the animation*/
     max-height: 0;
@@ -248,6 +236,11 @@ a .btn .icon {
     font-size: 5rem;
     padding-left: 2rem;
     color: var(--color-secondary);
+    transition: color 0.3s;
+}
+.nav__brand:hover {
+    color: var(--color-accent);
+    
 }
 @media screen and (min-width: 768px) {
     .nav__toggler {
@@ -447,9 +440,11 @@ a .btn .icon {
     font-size: 2.5rem;
 }
 /*Labels*/
+.label-es, .label-en {
+    transition: color 0.3s;
+}
 .label-es:hover, .label-en:hover {
     color: var(--color-accent);
-    transition: color 0.3s;
 }
 .label-es {
     margin-right: 20px;
@@ -472,6 +467,7 @@ a .btn .icon {
 }
 .hero__footer h2,h3 {
     font-weight: 400;
+    font-size: 2.5rem;
 }
 @media screen and (min-width:768px) {
     .hero__footer {
@@ -479,6 +475,13 @@ a .btn .icon {
         flex-direction: column;
         justify-content: center;
         line-height: 0;
+       
+    }
+
+}
+@media screen and (min-width: 1024px) {
+    .hero__footer h2,h3 {
+       font-size: 3.5rem;
     }
 }
 /* Skills */
@@ -505,14 +508,142 @@ a .btn .icon {
 
 /* Footer */
 .footer {
-    background: #C1DBE3;
     color: var(--color-accent);
+    background: var(--color-primary-soft);
     width: 100%;
-    height: 100%;
+    height: 10rem;
+    left: 0;
+    bottom: 0;
     text-align: center;
+    vertical-align: middle;
+    padding: 0;
+    position: relative;
 }
 .footer .icon {
     position:absolute;
     margin:-25px 0 0 -25px;
+}
+.footer .container {
+
+    font-size: 11px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@media screen and (min-width: 768px){
+    .footer .container {
+        font-size: inherit;
     
+    }
+}
+/*Projects*/
+.projects {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project {
+    margin-top: 3rem;
+}
+.projects .block__heading {
+    color: var(--color-accent);
+}
+@media screen and (min-width: 768px){
+    .project {
+        margin-inline: 1rem;
+    }
+    .projects .project__spread {
+        display:flex;
+        flex-direction: row;
+        align-content: flex-end;
+        width: 100%;
+        margin: auto;
+        grid-column: 1 / -1;
+    }
+    .projects .project__spread .project {
+        margin-inline: 8rem;
+        width: 60%;
+    }
+}
+/* Modals */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 50px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 65%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: var(--color-primary);
+  color: white;
+  margin: 0;
+}
+
+.modal-body {
+  object-fit: cover;
+  padding: 2px 16px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: var(--color-primary);
+  color: white;
+}
+.modal video {
+    object-fit: cover;
+    width: 100%;
+
 }
