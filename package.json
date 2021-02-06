@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://nebelschwaden.github.io/",
+  "homepage": "https://nebelschwaden.github.io/portfolio",
   "dependencies": {
     "gh-pages": "^1.2.0",
     "libraries": "0.0.3"
