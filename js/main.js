@@ -1,3 +1,5 @@
+import AOS from './../libraries/aos/aos';
+AOS.init();
 /* Navbar Collapsible */
 const collapsibles = document.querySelectorAll(".collapsible");
 collapsibles.forEach((item) =>
